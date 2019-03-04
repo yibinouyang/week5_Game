@@ -64,17 +64,23 @@
 			e.preventDefault();
 			console.log('you dragged something on me');
 
+			//this is Bug1&solution
+			if (zone.children.length != 0){
+				console.log('a piece already presents in this zone');
+				return false;
+			}
+
 			let piece = e.dataTransfer.getData("text/plain");
 			e.target.appendChild(document.querySelector(`#${piece}`));
 		});
 	});
-
 	
 	function resetPuzzlePieces() {
 		// change the current puzzle, regenerate the pieces
 		// debugger;
 		// clean out the puzzle pieces div
 		piecesBoard.innerHTML = "";
+
 
 		// generate new pieces
 		createPuzzlePieces(this.dataset.puzzleref);

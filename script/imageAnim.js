@@ -80,6 +80,9 @@
 		// debugger;
 		// clean out the puzzle pieces div
 		piecesBoard.innerHTML = "";
+		//this is bug2&solution
+		dropZones.forEach(zone => {
+			zone.innerHTML	= "";});
 
 
 		// generate new pieces
